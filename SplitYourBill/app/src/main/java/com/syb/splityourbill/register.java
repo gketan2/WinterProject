@@ -1,11 +1,13 @@
 package com.syb.splityourbill;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,6 +22,7 @@ public class register extends AppCompatActivity {
     Button signUpButton;
     private String name,email,pass,cnfpass;
     private FirebaseAuth Auth;
+    ProgressBar bar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,7 @@ public class register extends AppCompatActivity {
         cnfPassField = (EditText)findViewById(R.id.cnfPassField);
         signUpButton = (Button)findViewById(R.id.signUpButton);
         Auth = FirebaseAuth.getInstance();
+        bar = findViewById(R.id.progressBar2);
 
     }
 
@@ -56,12 +60,30 @@ public class register extends AppCompatActivity {
             Toast.makeText(register.this,"Please enter password.",Toast.LENGTH_SHORT).show();
         }
         else{                // do firebase code
+
+            bar.setVisibility(View.VISIBLE);
                 Auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        bar.setVisibility(View.GONE);
                         if(task.isSuccessful()){
-                            Toast.makeText(register.this,"Registered Successfully. Login here.",Toast.LENGTH_SHORT).show();
-                            finish();
+                            Toast.makeText(register.this,"Registered Successfully.",Toast.LENGTH_SHORT).show();
+                            bar.setVisibility(View.VISIBLE);
+                            Auth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    bar.setVisibility(View.GONE);
+                                    if(task.isSuccessful()){
+                                        Toast.makeText(register.this,"Logged In Successfully.",Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(register.this, ProfileActivity.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        startActivity(intent);
+
+                                    }
+                                    else Toast.makeText(register.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
                         }
                         else{
                             if(task.getException() instanceof FirebaseAuthUserCollisionException){

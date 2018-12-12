@@ -16,4 +16,5 @@
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="e_mail_id">E-mail Id</string>
+    <string name="title_activity_profile">Split Your Bill</string>
 </resources>

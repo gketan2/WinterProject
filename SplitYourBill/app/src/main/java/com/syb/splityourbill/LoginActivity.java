@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     private String email,pass;
     private EditText emailField_login,password;
     private FirebaseAuth auth;
+    ProgressBar bar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         emailField_login =(EditText) findViewById(R.id.emailField_login);
         password = (EditText) findViewById(R.id.password);
         auth = FirebaseAuth.getInstance();
+        bar =(ProgressBar) findViewById(R.id.progressBar);
 
     }
 
@@ -35,16 +38,20 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(View v){
+
         email = emailField_login.getText().toString();
         pass = password.getText().toString();
         if( !email.equals("") && !pass.equals("")){          // firebase code
+            bar.setVisibility(View.VISIBLE);
                 auth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        bar.setVisibility(View.GONE);
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this,"Logged In Successfully.",Toast.LENGTH_SHORT).show();
-                            //Intent intent = new Intent(LoginActivity.this, register.class);
-                            //startActivity(intent);
+                            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
 
                         }
                         else Toast.makeText(LoginActivity.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
