@@ -43,7 +43,9 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this,"Logged In Successfully.",Toast.LENGTH_SHORT).show();
-                            //here start profile activity
+                            //Intent intent = new Intent(LoginActivity.this, register.class);
+                            //startActivity(intent);
+
                         }
                         else Toast.makeText(LoginActivity.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
                     }
