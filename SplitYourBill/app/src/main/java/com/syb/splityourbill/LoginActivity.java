@@ -7,10 +7,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class LoginActivity extends AppCompatActivity {
 
     String phone,pass;
     EditText phonenumber,password;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         phonenumber =(EditText) findViewById(R.id.phonenumber);
         password = (EditText) findViewById(R.id.password);
+        auth = FirebaseAuth.getInstance();
 
     }
 
