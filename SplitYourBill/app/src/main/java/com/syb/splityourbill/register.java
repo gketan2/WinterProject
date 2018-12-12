@@ -40,10 +40,19 @@ public class register extends AppCompatActivity {
         cnfpass = cnfPassField.getText().toString();
 
         if(!pass.equals(cnfpass)){                                                //  check for same password
-            Toast.makeText(this,"Enter correct password",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Passwords didn't match.",Toast.LENGTH_SHORT).show();
             passField.setText("");
             cnfPassField.setText("");
             passField.requestFocus();
+        }
+        else if(name.isEmpty()){
+            Toast.makeText(register.this,"Please enter name.",Toast.LENGTH_SHORT).show();
+        }
+        else if(email.isEmpty()){
+            Toast.makeText(register.this,"Please enter E-mail id.",Toast.LENGTH_SHORT).show();
+        }
+        else if(pass.isEmpty()){
+            Toast.makeText(register.this,"Please enter password.",Toast.LENGTH_SHORT).show();
         }
         else{                // do firebase code
                 Auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
