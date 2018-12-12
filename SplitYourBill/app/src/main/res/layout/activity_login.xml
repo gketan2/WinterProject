@@ -7,16 +7,15 @@
     tools:context=".LoginActivity">
 
     <EditText
-        android:id="@+id/phonenumber"
+        android:id="@+id/emailField_login"
         android:layout_width="249dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="67dp"
         android:ems="10"
-        android:hint="Phone Number"
-        android:maxLength="10"
-        android:inputType="phone"
+        android:hint="@string/e_mail_id"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +32,7 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phonenumber" />
+        app:layout_constraintTop_toBottomOf="@+id/emailField_login" />
 
     <Button
         android:id="@+id/register_button"

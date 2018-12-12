@@ -9,14 +9,14 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    String phone,pass;
-    EditText phonenumber,password;
+    private String email,pass;
+    private EditText emailField_login,password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        phonenumber =(EditText) findViewById(R.id.phonenumber);
+        emailField_login =(EditText) findViewById(R.id.emailField_login);
         password = (EditText) findViewById(R.id.password);
 
     }
@@ -27,14 +27,14 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(View v){
-        phone = phonenumber.getText().toString();
+        email = emailField_login.getText().toString();
         pass = password.getText().toString();
-        if( !phone.equals("") && !pass.equals("")){          // firebase code
+        if( !email.equals("") && !pass.equals("")){          // firebase code
 
         }
         else{                                  // phone or pass is not null CHECK
             Toast.makeText(this,"Please Enter valid phone or password",Toast.LENGTH_SHORT).show();
-            phonenumber.requestFocus();
+            emailField_login.requestFocus();
         }
 
     }
