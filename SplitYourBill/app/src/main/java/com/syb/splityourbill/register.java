@@ -7,27 +7,31 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class register extends AppCompatActivity {
 
-    EditText nameField,phoneField,passField,cnfPassField;
+    EditText nameField,emailField,passField,cnfPassField;
     Button signUpButton;
-    String name,phone,pass,cnfpass;
+    private String name,email,pass,cnfpass;
+    private FirebaseAuth Auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         nameField = (EditText)findViewById(R.id.nameField);
-        phoneField = (EditText)findViewById(R.id.phoneField);
+        emailField = (EditText)findViewById(R.id.emailField);
         passField = (EditText)findViewById(R.id.passField);
         cnfPassField = (EditText)findViewById(R.id.cnfPassField);
         signUpButton = (Button)findViewById(R.id.signUpButton);
+        Auth = FirebaseAuth.getInstance();
 
     }
 
     public void signUp(View v){
         name = nameField.getText().toString();
-        phone = phoneField.getText().toString();
+        email = emailField.getText().toString();
         pass = passField.getText().toString();
         cnfpass = cnfPassField.getText().toString();
 
@@ -38,7 +42,7 @@ public class register extends AppCompatActivity {
             passField.requestFocus();
         }
         else{                // do firebase code
-
+                Auth.createUserWithEmailAndPassword(email,pass);
         }
     }
 }

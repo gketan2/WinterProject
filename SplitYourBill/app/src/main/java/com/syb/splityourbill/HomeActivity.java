@@ -72,7 +72,9 @@ public class HomeActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
             startActivity(intent);
         }
-
+        else if(id== R.id.exit){
+            finish();
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

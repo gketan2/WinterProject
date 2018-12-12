@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "719452426288",
+    "firebase_url": "https://split-your-bill-ff68e.firebaseio.com",
+    "project_id": "split-your-bill-ff68e",
+    "storage_bucket": "split-your-bill-ff68e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719452426288:android:b26de8652bcaee9c",
+        "android_client_info": {
+          "package_name": "com.syb.splityourbill"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719452426288-kjhpq4hka8q5vchrejkf3mljemcha475.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO35zTBu_0ZnQ99hWEJjSSgRtLQ1iYNSw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

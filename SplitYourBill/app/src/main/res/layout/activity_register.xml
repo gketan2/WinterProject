@@ -19,15 +19,14 @@
         app:layout_constraintTop_toBottomOf="@+id/TextView" />
 
     <EditText
-        android:id="@+id/phoneField"
+        android:id="@+id/emailField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:maxLength="10"
-        android:hint="@string/phone_number"
-        android:inputType="phone"
+        android:hint="E-mail Id"
+        android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameField" />
 
@@ -63,7 +62,7 @@
         android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneField" />
+        app:layout_constraintTop_toBottomOf="@+id/emailField" />
 
     <EditText
         android:id="@+id/cnfPassField"
