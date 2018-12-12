@@ -12,7 +12,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 public class register extends AppCompatActivity {
 
@@ -61,22 +60,8 @@ public class register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(register.this,"Registered Successfully.",Toast.LENGTH_SHORT).show();
-                            nameField.setText("");
-                            emailField.setText("");
-                            passField.setText("");
-                            cnfPassField.setText("");
-
                         }
                         else{
-                            if(task.getException() instanceof FirebaseAuthUserCollisionException){
-                                Toast.makeText(register.this,"User already registered. Login here.",Toast.LENGTH_SHORT).show();
-                                nameField.setText("");
-                                emailField.setText("");
-                                passField.setText("");
-                                cnfPassField.setText("");
-
-                            }
-                            else
                             Toast.makeText(register.this,"Could not register. Please try again.",Toast.LENGTH_SHORT).show();
                         }
                     }
