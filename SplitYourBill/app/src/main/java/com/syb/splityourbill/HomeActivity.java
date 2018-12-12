@@ -60,6 +60,7 @@ public class HomeActivity extends AppCompatActivity
             return true;
         }
 
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -71,6 +72,9 @@ public class HomeActivity extends AppCompatActivity
         if (id == R.id.nav_login) {
             Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
             startActivity(intent);
+        }
+        else if (id== R.id.exit){
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
