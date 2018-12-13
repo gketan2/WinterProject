@@ -1,6 +1,8 @@
 package com.syb.splityourbill;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,8 +20,8 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 public class register extends AppCompatActivity {
 
-    EditText nameField,emailField,passField,cnfPassField;
-    Button signUpButton;
+    private EditText nameField,emailField,passField,cnfPassField;
+    private Button signUpButton;
     private String name,email,pass,cnfpass;
     private FirebaseAuth Auth;
     ProgressBar bar;
@@ -56,6 +58,9 @@ public class register extends AppCompatActivity {
         else if(email.isEmpty()){
             Toast.makeText(register.this,"Please enter E-mail id.",Toast.LENGTH_SHORT).show();
         }
+        else if(android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            Toast.makeText(register.this,"Please enter correct E-mail id.",Toast.LENGTH_SHORT).show();
+        }
         else if(pass.isEmpty()){
             Toast.makeText(register.this,"Please enter password.",Toast.LENGTH_SHORT).show();
         }
@@ -75,9 +80,18 @@ public class register extends AppCompatActivity {
                                     bar.setVisibility(View.GONE);
                                     if(task.isSuccessful()){
                                         Toast.makeText(register.this,"Logged In Successfully.",Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(register.this, ProfileActivity.class);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        Intent intent = new Intent(register.this, HomeActivity.class);
+
+                                        SharedPreferences pref = getBaseContext().getSharedPreferences("UserDetail", Context.MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = pref.edit();
+                                        editor.putString("email",email);
+                                        editor.putString("name",name);
+                                        editor.commit();
+
+                                        intent.putExtra("name",name);
+                                        intent.putExtra("email",email);
                                         startActivity(intent);
+                                        finish();
 
                                     }
                                     else Toast.makeText(register.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();

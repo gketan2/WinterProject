@@ -1,6 +1,8 @@
 package com.syb.splityourbill;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -49,9 +51,14 @@ public class LoginActivity extends AppCompatActivity {
                         bar.setVisibility(View.GONE);
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this,"Logged In Successfully.",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
+                            SharedPreferences perf = getBaseContext().getSharedPreferences("UserDetail", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = perf.edit();
+                            editor.putString("email",email);
+                            editor.commit();
+                           finish();
 
                         }
                         else Toast.makeText(LoginActivity.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
@@ -59,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                 });
         }
         else{                                  // phone or pass is not null CHECK
-            Toast.makeText(this,"Please Enter valid phone or password",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Please Enter valid E-mail and password",Toast.LENGTH_SHORT).show();
             emailField_login.requestFocus();
         }
 

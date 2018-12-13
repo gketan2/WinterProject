@@ -1,6 +1,9 @@
 package com.syb.splityourbill;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -72,8 +75,20 @@ public class HomeActivity extends AppCompatActivity
             Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
             startActivity(intent);
         }
-        else if(id== R.id.exit){
+        else if(id == R.id.exit){
             finish();
+        }
+        else if(id == R.id.signout){
+            Intent intent = new Intent(this,LoginActivity.class);
+            startActivity(intent);
+            AsyncTask.execute(new Runnable() {
+                @Override
+                public void run() {
+                    SharedPreferences sharedpreferences = getBaseContext().getSharedPreferences("UserDetail", Context.MODE_PRIVATE);
+                    sharedpreferences.edit().clear().commit();
+                                        /////////////////////////////////////////////   CLEAR APP SQLITE TABLES SINCE IT IS SIGNOUT(do in Background using AsyncTask )
+                }
+            });
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
