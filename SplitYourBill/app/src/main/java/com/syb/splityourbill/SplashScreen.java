@@ -19,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 nextActivity();
             }
-        }, 200);
+        }, 400);
 
     }
 
