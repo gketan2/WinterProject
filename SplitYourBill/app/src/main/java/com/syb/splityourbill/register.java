@@ -58,11 +58,11 @@ public class register extends AppCompatActivity {
         else if(email.isEmpty()){
             Toast.makeText(register.this,"Please enter E-mail id.",Toast.LENGTH_SHORT).show();
         }
-        else if(android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            Toast.makeText(register.this,"Please enter correct E-mail id.",Toast.LENGTH_SHORT).show();
-        }
         else if(pass.isEmpty()){
             Toast.makeText(register.this,"Please enter password.",Toast.LENGTH_SHORT).show();
+        }
+        else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            Toast.makeText(register.this,"Invalid E-mail Id.",Toast.LENGTH_SHORT).show();
         }
         else{                // do firebase code
 
