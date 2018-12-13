@@ -5,14 +5,20 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_login"
-            android:title="LogIn with other account " />
+            android:id="@+id/nav_settle"
+            android:title="Settle Up" />
         <item
-            android:id="@+id/exit"
-            android:title="@string/exit" />
+            android:id="@+id/nav_history"
+            android:title="Expenditure" />
+        <item
+            android:id="@+id/nav_profile"
+            android:title="Profile" />
         <item
             android:id="@+id/signout"
             android:title="@string/sign_out" />
+        <item
+            android:id="@+id/exit"
+            android:title="@string/exit" />
     </group>
 
 

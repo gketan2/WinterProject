@@ -25,7 +25,7 @@ public class SplashScreen extends AppCompatActivity {
 
     void nextActivity(){
         SharedPreferences sharedpreferences = getBaseContext().getSharedPreferences("UserDetail", Context.MODE_PRIVATE);
-        if(!sharedpreferences.contains("email")){
+        if(sharedpreferences.contains("email")){
             Intent intent = new Intent(this,HomeActivity.class);
             intent.putExtra("email",sharedpreferences.getString("email","no_email"));
             startActivity(intent);
