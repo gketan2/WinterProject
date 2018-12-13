@@ -61,6 +61,9 @@ public class register extends AppCompatActivity {
         else if(pass.isEmpty()){
             Toast.makeText(register.this,"Please enter password.",Toast.LENGTH_SHORT).show();
         }
+        else if(pass.length()<6){
+            Toast.makeText(register.this,"Minimum 6 Charcter Password Required",Toast.LENGTH_SHORT).show();
+        }
         else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             Toast.makeText(register.this,"Invalid E-mail Id.",Toast.LENGTH_SHORT).show();
         }
@@ -86,12 +89,13 @@ public class register extends AppCompatActivity {
                                         SharedPreferences.Editor editor = pref.edit();
                                         editor.putString("email",email);
                                         editor.putString("name",name);
-                                        editor.commit();
+                                        editor.apply();
 
                                         intent.putExtra("name",name);
                                         intent.putExtra("email",email);
                                         startActivity(intent);
-                                        finish();
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+
 
                                     }
                                     else Toast.makeText(register.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
