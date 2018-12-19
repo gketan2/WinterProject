@@ -3,9 +3,12 @@ package com.syb.splityourbill;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,9 +17,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,6 +38,7 @@ public class HomeActivity extends AppCompatActivity
     DatabaseReference ref = database.getReference("users");
     public String usernames,useremail;
     public TextView email, uname;
+    private ImageView pic;
     View headerView;
     NavigationView navigationView;
 
@@ -56,21 +62,19 @@ public class HomeActivity extends AppCompatActivity
         headerView = navigationView.getHeaderView(0);
         email = (TextView) headerView.findViewById(R.id.home_email_view);
         uname = (TextView) headerView.findViewById(R.id.home_name_view);
+        pic = (ImageView) headerView.findViewById(R.id.imageView);
 
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                User user = dataSnapshot.child(userId).getValue(User.class);
-                email.setText(user.email);
-                uname.setText(user.username);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // Name, email address, and profile photo Url
+            String names = user.getDisplayName();
+            String emails = user.getEmail();
+            Uri photoUrl = user.getPhotoUrl();
+            email.setText(emails);
+            uname.setText(names);
+            pic.setImageURI(photoUrl);
+        }
 
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-
-        });
 
 
 
@@ -114,8 +118,12 @@ public class HomeActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Fragment fragment = null;
         if(id == R.id.exit){
             finish();
+        }
+        else if(id == R.id.nav_profile){
+            fragment = new Profile();
         }
         else if(id == R.id.signout){
             Intent intent = new Intent(this,LoginActivity.class);
@@ -131,6 +139,12 @@ public class HomeActivity extends AppCompatActivity
             });
             startActivity(intent);
 
+        }
+        //replacing the fragment
+        if (fragment != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.relay, fragment);
+            ft.commit();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -87,27 +89,37 @@ public class register extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
 
 
-                                    bar.setVisibility(View.GONE);
+
                                     if(task.isSuccessful()){
-                                        String userId = FirebaseAuth.getInstance().getUid();
-                                        User user = new User(name,email);
-                                        mDatabase.child("users").child(userId).setValue(user);
+                                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                                .setDisplayName(name)
+                                                .build();
 
+                                        user.updateProfile(profileUpdates);
+                                        Auth.signOut();
+                                        Auth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                                if(task.isSuccessful()){
+                                                    bar.setVisibility(View.GONE);
+                                                    Toast.makeText(register.this,"Logged In Successfully.",Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(register.this, HomeActivity.class);
 
-                                        Toast.makeText(register.this,"Logged In Successfully.",Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(register.this, HomeActivity.class);
+                                                    SharedPreferences pref = getBaseContext().getSharedPreferences("UserDetail", Context.MODE_PRIVATE);
+                                                    SharedPreferences.Editor editor = pref.edit();
+                                                    editor.putString("email",email);
+                                                    editor.putString("name",name);
+                                                    editor.apply();
 
-                                        SharedPreferences pref = getBaseContext().getSharedPreferences("UserDetail", Context.MODE_PRIVATE);
-                                        SharedPreferences.Editor editor = pref.edit();
-                                        editor.putString("email",email);
-                                        editor.putString("name",name);
-                                        editor.apply();
+                                                    startActivity(intent);
+                                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                                        intent.putExtra("name",name);
-                                        intent.putExtra("email",email);
-                                        intent.putExtra("userId",userId);
-                                        startActivity(intent);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                                                }
+                                                else Toast.makeText(register.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+
+                                            }
+                                        });
 
 
                                     }
