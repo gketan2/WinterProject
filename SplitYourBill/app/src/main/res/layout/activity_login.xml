@@ -8,30 +8,30 @@
 
     <EditText
         android:id="@+id/emailField_login"
-        android:layout_width="249dp"
+        android:layout_width="272dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="67dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="72dp"
         android:ems="10"
         android:hint="@string/e_mail_id"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="247dp"
+        android:layout_width="268dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="44dp"
         android:layout_marginEnd="69dp"
+        android:layout_marginTop="40dp"
+
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailField_login" />
 
     <Button
@@ -39,8 +39,8 @@
         style="@android:style/Widget.Holo.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="252dp"
         android:onClick="register"
         android:text="@string/register_button"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,11 +49,14 @@
     <Button
         android:id="@+id/login_button"
         style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-        android:layout_width="wrap_content"
+        android:layout_width="129dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="100dp"
+
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="80dp"
+
         android:onClick="login"
+
         android:text="Log In"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
