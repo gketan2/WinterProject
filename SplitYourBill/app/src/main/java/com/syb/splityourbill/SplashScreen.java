@@ -27,12 +27,12 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         StartAnimations();
-        new Handler().postDelayed(new Runnable(){
-            @Override
-            public void run() {
-                nextActivity();
-            }
-        }, 400);
+//        new Handler().postDelayed(new Runnable(){
+//            @Override
+//            public void run() {
+//                nextActivity();
+//            }
+//        }, 400);
     }
     private void StartAnimations() {
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
@@ -53,14 +53,12 @@ public class SplashScreen extends AppCompatActivity {
                 try {
                     int waited = 0;
                     // Splash screen pause time
-                    while (waited < 3500) {
-                        sleep(100);
-                        waited += 100;
-                    }
+                    sleep(1200);
                     //Intent intent = new Intent(SplashScreen.this,
                       //      HomeActivity.class);
                     //intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     //startActivity(intent);
+                    nextActivity();
                     SplashScreen.this.finish();
                 } catch (InterruptedException e) {
                     // do nothing

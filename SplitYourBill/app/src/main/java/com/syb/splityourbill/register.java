@@ -88,8 +88,6 @@ public class register extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
 
-
-
                                     if(task.isSuccessful()){
                                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                                         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
@@ -112,8 +110,9 @@ public class register extends AppCompatActivity {
                                                     editor.putString("name",name);
                                                     editor.apply();
 
+                                                    finish();
                                                     startActivity(intent);
-                                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+
 
                                                 }
                                                 else Toast.makeText(register.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();

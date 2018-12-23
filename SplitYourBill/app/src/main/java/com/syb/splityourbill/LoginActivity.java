@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void register(View v){
         Intent intent = new Intent(this,register.class);           // start register activity
+        finish();
         startActivity(intent);
     }
 
@@ -52,13 +53,13 @@ public class LoginActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this,"Logged In Successfully.",Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                            finish();
                             startActivity(intent);
                             SharedPreferences perf = getBaseContext().getSharedPreferences("UserDetail", Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = perf.edit();
                             editor.putString("email",email);
                             editor.commit();
-                           finish();
+
 
                         }
                         else Toast.makeText(LoginActivity.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
