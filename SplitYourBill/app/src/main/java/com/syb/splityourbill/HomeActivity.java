@@ -126,7 +126,7 @@ public class HomeActivity extends AppCompatActivity
             fragment = new Profile();
         }
         else if(id == R.id.signout){
-            Intent intent = new Intent(this,LoginActivity.class);
+            Intent intent = new Intent(this,UserAuthActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
             auth.signOut();
             AsyncTask.execute(new Runnable() {

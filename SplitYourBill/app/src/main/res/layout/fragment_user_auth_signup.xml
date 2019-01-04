@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".register">
+    tools:context=".UserAuthActivity">
 
     <EditText
         android:id="@+id/nameField"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toBottomOf="@+id/TextView" />
 
     <EditText
-        android:id="@+id/emailField"
+        android:id="@+id/signUpEmailField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -49,13 +49,12 @@
         android:layout_height="42dp"
         android:layout_marginBottom="72dp"
         android:layout_marginStart="136dp"
-        android:onClick="signUp"
         android:text="@string/sign_up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/passField"
+        android:id="@+id/signUpPassField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
@@ -64,10 +63,10 @@
         android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailField" />
+        app:layout_constraintTop_toBottomOf="@+id/signUpEmailField" />
 
     <EditText
-        android:id="@+id/cnfPassField"
+        android:id="@+id/signUpCnfPassField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -76,20 +75,8 @@
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passField" />
+        app:layout_constraintTop_toBottomOf="@+id/signUpPassField" />
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/signUpButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554" />
+
 
 </android.support.constraint.ConstraintLayout>

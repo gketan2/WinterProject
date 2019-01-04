@@ -25,7 +25,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="customapp" parent="Theme.AppCompat.Light.NoActionBar" >
+    <style name="customapp" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:navigationBarColor">@color/holo_blue_light</item>
         <item name="android:colorForeground">@android:color/background_dark</item>
     </style>
