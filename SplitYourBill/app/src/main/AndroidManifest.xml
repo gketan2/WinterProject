@@ -28,7 +28,8 @@
         <activity
             android:name=".UserAuthActivity"
             android:label="@string/title_activity_user_auth"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ForgetPasswordActivity"></activity>
     </application>
 
 </manifest>

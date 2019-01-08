@@ -119,8 +119,7 @@ public class UserAuthActivity extends AppCompatActivity implements UserAuthFragm
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            return 2;
         }
     }
 
@@ -161,23 +160,26 @@ public class UserAuthActivity extends AppCompatActivity implements UserAuthFragm
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-
+                        status = true;
                     }
                     else{
                         Toast.makeText(UserAuthActivity.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+                        status = false;
                     }
                 }
             });
         }
 
 
-
-        return true;
+        return status;
     }
+
+    boolean status = false;
 
     @Override
     public boolean signIn(String emailId, String password) {
         final String email = emailId;
+
         FirebaseAuth auth = FirebaseAuth.getInstance();
         if( !emailId.equals("") && !password.equals("")){          // firebase code
 
@@ -197,17 +199,26 @@ public class UserAuthActivity extends AppCompatActivity implements UserAuthFragm
                     }
                     else {
                         Toast.makeText(UserAuthActivity.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
-
+                        status = false;
                     }
 
                 }
+
             });
         }
-        else{                                  // phone or pass is not null CHECK
+        else{                                  // email or pass is not null CHECK
             Toast.makeText(this,"Please Enter valid E-mail and password",Toast.LENGTH_SHORT).show();
-            return false;
+            status =  false;
         }
-        return true;
+        status = true;
+        return status;
 
+    }
+
+
+    @Override
+    public void forgetPassword(){
+        Intent intent = new Intent(this,ForgetPasswordActivity.class);
+        startActivity(intent);
     }
 }
