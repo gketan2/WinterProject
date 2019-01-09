@@ -2,15 +2,17 @@ package com.syb.splityourbill;
 
 public class User {
 
-    public String username;
+    public String name;
     public String email;
+    public String password;
 
     public User() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public User(String username, String email) {
-        this.username = username;
+    public User(String name, String email, String password) {
+        this.name = name;
         this.email = email;
+        this.password = password;
     }
 }

@@ -17,8 +17,8 @@ import android.widget.TextView;
 public class UserAuthFragment_login extends Fragment {
 
     public interface SignInInterface {
-        public boolean signIn(String emailId,String password);
-        public boolean registerUser(String name,String emailId,String pass,String cnfPass);
+        public void signIn(String emailId,String password);
+        public void registerUser(String name,String emailId,String pass,String cnfPass);
         public void forgetPassword();
     }
 
@@ -62,7 +62,7 @@ public class UserAuthFragment_login extends Fragment {
 
         String emailid = logInEmailField.getText().toString();
         String password = logInPassField.getText().toString();
-        linker.signIn(emailid,password);
+        linker.signIn(emailid.trim(),password);
 
     }
 

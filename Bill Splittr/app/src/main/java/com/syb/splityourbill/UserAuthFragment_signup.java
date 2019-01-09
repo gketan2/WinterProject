@@ -52,10 +52,7 @@ public class UserAuthFragment_signup extends Fragment {
         String cnfpass = signUpCnfPassField.getText().toString();
 
 
-        boolean b = linker.registerUser(name,emailid,pass,cnfpass);
-        if(b){
-            linker.signIn(emailid,pass);
-        }
+        linker.registerUser(name.trim(),emailid.trim(),pass,cnfpass);
 
     }
 }

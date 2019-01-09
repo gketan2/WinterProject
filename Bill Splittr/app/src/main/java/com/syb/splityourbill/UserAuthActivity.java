@@ -21,6 +21,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class UserAuthActivity extends AppCompatActivity implements UserAuthFragment_login.SignInInterface {
 
@@ -128,31 +130,33 @@ public class UserAuthActivity extends AppCompatActivity implements UserAuthFragm
 
 
     @Override
-    public boolean registerUser(String name ,String emailId, String pass, String cnfPass) {
+    public void registerUser(final String name , final String emailId,final String pass,final String cnfPass) {
+
+        status =0;
 
         if(!pass.equals(cnfPass)){                                                //  check for same password
             Toast.makeText(this,"Passwords didn't match.",Toast.LENGTH_SHORT).show();
-            return false;
+            status =  1;
         }
         else if(name.isEmpty()){
             Toast.makeText(UserAuthActivity.this,"Please enter name.",Toast.LENGTH_SHORT).show();
-            return false;
+            status =  1;
         }
         else if(emailId.isEmpty()){
             Toast.makeText(UserAuthActivity.this,"Please enter E-mail id.",Toast.LENGTH_SHORT).show();
-            return false;
+            status =  1;
         }
         else if(pass.isEmpty()){
             Toast.makeText(UserAuthActivity.this,"Please enter password.",Toast.LENGTH_SHORT).show();
-            return false;
+            status =  1;
         }
         else if(pass.length()<6){
             Toast.makeText(UserAuthActivity.this,"Minimum 6 Charcter Password Required",Toast.LENGTH_SHORT).show();
-            return false;
+            status =  1;
         }
         else if(!android.util.Patterns.EMAIL_ADDRESS.matcher(emailId).matches()){
             Toast.makeText(UserAuthActivity.this,"Invalid E-mail Id.",Toast.LENGTH_SHORT).show();
-            return false;
+            status =  1;
         }
         else{
             FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -160,26 +164,55 @@ public class UserAuthActivity extends AppCompatActivity implements UserAuthFragm
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        status = true;
+
+                        FirebaseAuth auth = FirebaseAuth.getInstance();
+                        auth.signInWithEmailAndPassword(emailId,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                if(task.isComplete()){
+                                User user = new User(name,emailId,pass);
+
+                                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+                                mDatabase.child("users").child(FirebaseAuth.getInstance().getUid()).setValue(user);
+
+                                Intent intent = new Intent(UserAuthActivity.this, HomeActivity.class);
+                                finish();
+                                startActivity(intent);
+                                SharedPreferences perf = getBaseContext().getSharedPreferences("UserDetail", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = perf.edit();
+                                editor.putString("email",emailId);
+                                editor.putString("name",name);
+                                editor.apply();
+                                }
+                                else {
+                                    Toast.makeText(UserAuthActivity.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+                                    status = 2;
+                                }
+
+                            }
+                        });
+
+                        status = 0;
                     }
                     else{
                         Toast.makeText(UserAuthActivity.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
-                        status = false;
+                        status = 2;
                     }
                 }
             });
         }
-
-
-        return status;
+        if(status==2)
+            Toast.makeText(UserAuthActivity.this,"Something Went wrong",Toast.LENGTH_SHORT).show();
     }
 
-    boolean status = false;
+    int status = 0;
+    String name="";
 
     @Override
-    public boolean signIn(String emailId, String password) {
-        final String email = emailId;
+    public void signIn(final String emailId, String password) {
 
+        status = 0;
         FirebaseAuth auth = FirebaseAuth.getInstance();
         if( !emailId.equals("") && !password.equals("")){          // firebase code
 
@@ -192,14 +225,15 @@ public class UserAuthActivity extends AppCompatActivity implements UserAuthFragm
                         startActivity(intent);
                         SharedPreferences perf = getBaseContext().getSharedPreferences("UserDetail", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = perf.edit();
-                        editor.putString("email",email);
+                        editor.putString("email",emailId);
+                        editor.putString("name",name);
                         editor.apply();
 
 
                     }
                     else {
                         Toast.makeText(UserAuthActivity.this,task.getException().getLocalizedMessage(),Toast.LENGTH_SHORT).show();
-                        status = false;
+                        status = 1;
                     }
 
                 }
@@ -208,10 +242,8 @@ public class UserAuthActivity extends AppCompatActivity implements UserAuthFragm
         }
         else{                                  // email or pass is not null CHECK
             Toast.makeText(this,"Please Enter valid E-mail and password",Toast.LENGTH_SHORT).show();
-            status =  false;
+            status =  1;
         }
-        status = true;
-        return status;
 
     }
 
