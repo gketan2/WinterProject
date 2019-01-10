@@ -3,6 +3,7 @@ package com.syb.splityourbill;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -172,9 +175,18 @@ public class UserAuthActivity extends AppCompatActivity implements UserAuthFragm
 
                                 if(task.isComplete()){
                                 User user = new User(name,emailId,pass);
+                                Uri uri = Uri.parse("android.resource://com.syb.splityourbill/drawable/defprofpic.png");
 
                                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+
                                 mDatabase.child("users").child(FirebaseAuth.getInstance().getUid()).setValue(user);
+                                FirebaseUser fuser = FirebaseAuth.getInstance().getCurrentUser();
+                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                            .setDisplayName(name)
+                                            .setPhotoUri(uri)
+                                            .build();
+
+                                    fuser.updateProfile(profileUpdates);
 
                                 Intent intent = new Intent(UserAuthActivity.this, HomeActivity.class);
                                 finish();

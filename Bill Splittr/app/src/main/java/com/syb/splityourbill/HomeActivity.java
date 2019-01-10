@@ -65,6 +65,7 @@ public class HomeActivity extends AppCompatActivity
         pic = (ImageView) headerView.findViewById(R.id.imageView);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
         if (user != null) {
             // Name, email address, and profile photo Url
             String names = user.getDisplayName();
