@@ -25,11 +25,9 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/customapp" />
-        <activity
-            android:name=".UserAuthActivity"
-            android:label="@string/title_activity_user_auth"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ForgetPasswordActivity"></activity>
+        <activity android:name=".ForgetPasswordActivity" />
+        <activity android:name=".LogInActivity" />
+        <activity android:name=".SignUpActivity"></activity>
     </application>
 
 </manifest>

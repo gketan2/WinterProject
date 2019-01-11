@@ -20,6 +20,8 @@
     <string name="title_activity_profile">Split Your Bill</string>
     <string name="sign_out">Sign Out</string>
     <string name="exit">Exit</string>
+    <string name="settle_up">Settle Up</string>
+    <string name="expenditure">Expenditure</string>
     <string name="title_activity_user_auth">UserAuthActivity</string>
     <string name="tab_text_1">Log In</string>
     <string name="tab_text_2">Sign Up</string>

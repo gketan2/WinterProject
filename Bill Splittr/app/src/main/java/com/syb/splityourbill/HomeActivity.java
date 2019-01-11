@@ -123,11 +123,17 @@ public class HomeActivity extends AppCompatActivity
         if(id == R.id.exit){
             finish();
         }
+        else if(id == R.id.nav_settle){
+
+        }
+        else if(id == R.id.nav_history){
+
+        }
         else if(id == R.id.nav_profile){
             fragment = new Profile();
         }
         else if(id == R.id.signout){
-            Intent intent = new Intent(this,UserAuthActivity.class);
+            Intent intent = new Intent(this,LogInActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
             auth.signOut();
             AsyncTask.execute(new Runnable() {
@@ -144,7 +150,7 @@ public class HomeActivity extends AppCompatActivity
         //replacing the fragment
         if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.relay, fragment);
+            ft.replace(R.id.fragment_container, fragment);
             ft.commit();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
