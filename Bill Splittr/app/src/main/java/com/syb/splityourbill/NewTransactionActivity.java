@@ -13,13 +13,14 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
-//import java.util.LinkedList;
+import java.util.LinkedList;
 
 public class NewTransactionActivity extends AppCompatActivity {
 
     EditText remarks;//payee1,amount1;
-    //LinkedList<Integer> idList = new LinkedList<Integer>();
+    LinkedList<String> payeeListData;// = new LinkedList<String>();
     ListView payeeList,participantList;
+    AddPayeeAdapter payeeadapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +33,14 @@ public class NewTransactionActivity extends AppCompatActivity {
 //        amount1 = (EditText) findViewById(R.id.amount1);
 //        idList.add(R.id.payee1);
 //        idList.add(R.id.amount1);
+        payeeListData = new LinkedList<String>();
+        payeeListData.add("");payeeListData.add("");
+        payeeadapter = new AddPayeeAdapter(this,payeeListData);
         payeeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                editPayee(view);
             }
         });
 
@@ -43,6 +48,7 @@ public class NewTransactionActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                editParticipant(view);
             }
         });
     }

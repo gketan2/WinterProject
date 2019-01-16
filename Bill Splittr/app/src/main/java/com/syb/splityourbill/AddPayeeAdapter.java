@@ -8,18 +8,21 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.HashMap;
-import java.util.List;
+import java.util.LinkedList;
+//import java.util.List;
 
-class addPayeeLayout extends BaseAdapter {
+class AddPayeeAdapter extends BaseAdapter {
 
     private Context mContext;
-    private List<String> mpayeeEmail;
-    private List<Integer> mAmount;
+    private LinkedList<String> mpayeeEmail;
+    private LinkedList<String> mAmount;
     private ViewHolder holder;
 
-    addPayeeLayout(Context context, String[] list) {
+    AddPayeeAdapter(Context context, LinkedList<String> list) {
         mContext = context;
-        for(int i=0;i<list.length;i++){mpayeeEmail.add(list[i]);mAmount.add(Integer.parseInt(list[i]));}
+        mpayeeEmail = new LinkedList<String>();
+        mAmount  = new LinkedList<String>();
+        for(int i=0;i<list.size();i++){mpayeeEmail.add(list.get(i));i++;mAmount.add(list.get(i));}
 
 
     }
@@ -45,7 +48,7 @@ class addPayeeLayout extends BaseAdapter {
     @Override
     public Object getItem(int position) {
         HashMap<String,Integer> map = new HashMap<String,Integer>();
-        map.put(mpayeeEmail.get(position),mAmount.get(position));
+        map.put(mpayeeEmail.get(position),Integer.parseInt(mAmount.get(position)));
         return map;
     }
 

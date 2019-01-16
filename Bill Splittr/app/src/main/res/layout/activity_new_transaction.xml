@@ -51,7 +51,6 @@
         android:isScrollContainer="true"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="editPayee"
         android:maxHeight="140sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -77,7 +76,6 @@
         android:isScrollContainer="true"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="editParticipant"
         android:maxHeight="140sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addparticipant" />
