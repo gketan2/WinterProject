@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -41,6 +42,7 @@ public class HomeActivity extends AppCompatActivity
     private ImageView pic;
     View headerView;
     NavigationView navigationView;
+    FloatingActionButton addnew;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,7 @@ public class HomeActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         headerView = navigationView.getHeaderView(0);
+        addnew = (FloatingActionButton)findViewById(R.id.addnew);
         email = (TextView) headerView.findViewById(R.id.home_email_view);
         uname = (TextView) headerView.findViewById(R.id.home_name_view);
         pic = (ImageView) headerView.findViewById(R.id.imageView);
@@ -80,6 +83,14 @@ public class HomeActivity extends AppCompatActivity
 
 
     }
+
+    public void addNewTransaction(View v){
+        Intent intent = new Intent(this,NewTransactionActivity.class);
+        startActivity(intent);
+    }
+
+
+
 
     @Override
     public void onBackPressed() {
@@ -124,6 +135,7 @@ public class HomeActivity extends AppCompatActivity
             finish();
         }
         else if(id == R.id.nav_settle){
+            fragment = new SettleUp();
 
         }
         else if(id == R.id.nav_history){

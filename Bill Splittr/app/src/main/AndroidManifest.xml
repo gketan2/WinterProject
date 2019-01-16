@@ -27,7 +27,8 @@
             android:theme="@style/customapp" />
         <activity android:name=".ForgetPasswordActivity" />
         <activity android:name=".LogInActivity" />
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".NewTransactionActivity"></activity>
     </application>
 
 </manifest>
