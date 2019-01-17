@@ -6,24 +6,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.LinkedList;
-//import java.util.List;
 
 class AddPayeeAdapter extends BaseAdapter {
 
     private Context mContext;
-    private LinkedList<String> mpayeeEmail;
-    private LinkedList<String> mAmount;
+    private LinkedList<HashMap<String,String>> payeeData = new LinkedList<HashMap<String, String>>();
     private ViewHolder holder;
 
-    AddPayeeAdapter(Context context, LinkedList<String> list) {
+    AddPayeeAdapter(Context context, LinkedList<HashMap<String,String>> list) {
         mContext = context;
-        mpayeeEmail = new LinkedList<String>();
-        mAmount  = new LinkedList<String>();
-        for(int i=0;i<list.size();i++){mpayeeEmail.add(list.get(i));i++;mAmount.add(list.get(i));}
-
+        this.payeeData = list;
+        //payeeData.addAll(list);
 
     }
 
@@ -42,13 +39,14 @@ class AddPayeeAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return mpayeeEmail.size();
+        return payeeData.size();
     }
 
     @Override
     public Object getItem(int position) {
         HashMap<String,Integer> map = new HashMap<String,Integer>();
-        map.put(mpayeeEmail.get(position),Integer.parseInt(mAmount.get(position)));
+        String x = payeeData.get(position).keySet().toArray()[0].toString();int y = Integer.parseInt(payeeData.get(position).get(x));
+        map.put(x,y);
         return map;
     }
 
@@ -61,17 +59,16 @@ class AddPayeeAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View vi = convertView;
-        if (convertView == null) {
-            vi = LayoutInflater.from(mContext).inflate(R.layout.newpayee_list_layout,parent);
+        if(vi == null){
+            vi = LayoutInflater.from(mContext).inflate(R.layout.newpayee_list_layout,parent,false);
+        }
             holder = new ViewHolder();
             holder.payeeemail = (TextView) vi.findViewById(R.id.payeeemail);
             holder.payeeamount = (TextView) vi.findViewById(R.id.payeeamount);
-            holder.payeeamount.setText(mAmount.get(position));
-            holder.payeeemail.setText(mpayeeEmail.get(position));
+            String x = payeeData.get(position).keySet().toArray()[0].toString();
+            holder.payeeamount.setText(payeeData.get(position).get(x));
+            holder.payeeemail.setText(x);
             vi.setTag(holder);
-        } else {
-            holder = (ViewHolder) vi.getTag();
-        }
 
         return vi;
     }
