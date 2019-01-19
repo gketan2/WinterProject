@@ -5,7 +5,8 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewTransactionActivity">
+    tools:context=".NewTransactionActivity"
+    android:isScrollContainer="true">
 
     <EditText
         android:id="@+id/remarks"
@@ -38,6 +39,7 @@
         android:layout_marginStart="16sp"
         android:layout_marginTop="15sp"
         android:text="Payee"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/remarks" />
@@ -58,12 +60,12 @@
 
     <Button
         android:id="@+id/addpayee"
-        android:layout_width="25sp"
-        android:layout_height="25sp"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
         android:layout_marginStart="272dp"
-        android:layout_marginTop="110dp"
-        android:onClick="addNewPayee"
+        android:layout_marginTop="105dp"
         android:background="@drawable/round_button"
+        android:onClick="addNewPayee"
         android:text="+"
         app:layout_constraintStart_toStartOf="@id/textView3"
         app:layout_constraintTop_toTopOf="parent" />
@@ -72,7 +74,7 @@
         android:id="@+id/listviewparticipant"
         android:layout_width="350sp"
         android:layout_height="wrap_content"
-        android:maxHeigh="140sp"
+        android:maxHeight="140sp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="12dp"
         android:clickable="true"
@@ -94,10 +96,10 @@
 
     <Button
         android:id="@+id/addparticipant"
-        android:layout_width="25sp"
-        android:layout_height="25sp"
+        android:layout_width="30sp"
+        android:layout_height="30sp"
         android:layout_marginStart="272dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="23dp"
         android:background="@drawable/round_button"
         android:onClick="addNewParticipant"
         android:text="+"

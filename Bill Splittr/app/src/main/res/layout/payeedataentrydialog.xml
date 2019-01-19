@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -39,7 +40,6 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="22dp"
         android:text="Cancel"
-        android:textColor="#FF0000"
         app:layout_constraintEnd_toStartOf="@+id/dialoginputOkButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dialogInputAmount" />
@@ -53,8 +53,19 @@
         android:layout_marginEnd="52dp"
         android:text="Ok"
         android:textColor="#0B6623"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/dialoginputCancelButton"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="20dp"
+        android:text="Delete"
+        android:textColor="#FF0000"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialogInputAmount" />
 
 </android.support.constraint.ConstraintLayout>

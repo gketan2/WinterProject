@@ -20,7 +20,6 @@ class AddPayeeAdapter extends BaseAdapter {
     AddPayeeAdapter(Context context, LinkedList<HashMap<String,String>> list) {
         mContext = context;
         this.payeeData = list;
-        //payeeData.addAll(list);
 
     }
 
@@ -30,11 +29,9 @@ class AddPayeeAdapter extends BaseAdapter {
         public TextView payeeamount;
     }
 
-//    public void remove(int position) {
-//        mEmail.remove(position);
-//        mAmount.remove(position);
-//
-//    }
+    public void remove(int position) {
+        payeeData.remove(position);
+    }
 
 
     @Override
