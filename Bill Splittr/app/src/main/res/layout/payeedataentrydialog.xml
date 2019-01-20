@@ -49,12 +49,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
-        android:layout_marginTop="142dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="52dp"
         android:text="Ok"
         android:textColor="#0B6623"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/dialoginputCancelButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/dialogInputAmount" />
 
     <Button
         android:id="@+id/deleteButton"
@@ -62,9 +63,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
         android:text="Delete"
         android:textColor="#FF0000"
         android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/dialoginputCancelButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dialogInputAmount" />
 

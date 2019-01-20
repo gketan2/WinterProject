@@ -9,10 +9,10 @@ import android.widget.TextView;
 
 import java.util.LinkedList;
 
-public class AddParticipantAdapter extends BaseAdapter {
+class AddParticipantAdapter extends BaseAdapter {
 
     private Context mContext;
-    private LinkedList<String> participantData = new LinkedList<String>();
+    private LinkedList<String> participantData;// = new LinkedList<String>();
     private ViewHolder holder;
 
     AddParticipantAdapter(Context context,LinkedList<String> list){
@@ -26,7 +26,7 @@ public class AddParticipantAdapter extends BaseAdapter {
     }
 
     @Override
-    public String getItem(int position) {
+    public Object getItem(int position) {
         return participantData.get(position);
     }
 
@@ -46,7 +46,7 @@ public class AddParticipantAdapter extends BaseAdapter {
         holder.payeeemail = vi.findViewById(R.id.participantEmail);
         holder.payeeemail.setText(participantData.get(position));
         vi.setTag(holder);
-        return null;
+        return vi;
     }
 
     private final class ViewHolder {

@@ -127,6 +127,7 @@ public class NewTransactionActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
+
         dialoginputOkButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
