@@ -251,6 +251,7 @@ public class NewTransactionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 participantListData.remove(position);
                 participantadapter.notifyDataSetChanged();
+                dialog.dismiss();
             }
         });
 

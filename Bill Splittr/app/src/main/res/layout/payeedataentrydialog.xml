@@ -68,7 +68,6 @@
         android:textColor="#FF0000"
         android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/dialoginputCancelButton"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dialogInputAmount" />
 
 </android.support.constraint.ConstraintLayout>

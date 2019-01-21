@@ -20,16 +20,11 @@
     <list default="true" id="f0994c70-e242-4b96-8391-3694c51bd094" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddParticipantAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddParticipantAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransactionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransactionActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/newpayee_list_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/newpayee_list_layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/payeedataentrydialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/payeedataentrydialog.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,36 +63,36 @@
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.33" value="1" />
-          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.34" value="2" />
           <entry key="project.open.time.39" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.59" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="3" />
+          <entry key="java" value="4" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="3" />
+          <entry key="JAVA" value="4" />
           <entry key="XML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="9" />
-          <entry key="java" value="3338" />
+          <entry key="java" value="3358" />
           <entry key="xml" value="616" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3338" />
+          <entry key="JAVA" value="3358" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="XML" value="616" />
         </counts>
@@ -109,80 +104,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransactionActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1401">
-              <caret line="135" column="51" selection-start-line="135" selection-start-column="51" selection-end-line="135" selection-end-column="51" />
+            <state relative-caret-position="98">
+              <caret line="134" column="35" lean-forward="true" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_transaction.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddParticipantAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#728#729#0" expanded="true" />
-                <element signature="e#780#781#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddPayeeAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/newparticipant_list_layout.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/newpayee_list_layout.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/payeedataentrydialog.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -2501,15 +2430,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/addPayeeAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/newparticipant_list_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_new_transaction.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/payeedataentrydialog.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransactionActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddPayeeAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/newpayee_list_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddParticipantAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/payeedataentrydialog.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransactionActivity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1940" />
@@ -2523,23 +2452,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Bill Splittr" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="Bill Splittr" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2556,12 +2468,35 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Bill Splittr" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="Bill Splittr" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="Bill Splittr" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="splityourbill" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="Nexus_5X_API_25" />
+    <property name="device.picker.selection" value="2b05aae97ce4" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/FirebasePractice" />
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
@@ -2712,8 +2647,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1552" height="840" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49853373" visible="true" weight="0.14008042" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49853373" visible="true" weight="0.15281501" />
       <window_info id="Structure" order="1" sideWeight="0.5014663" side_tool="true" weight="0.1704698" />
       <window_info id="Favorites" order="2" sideWeight="0.5014663" side_tool="true" weight="0.1704698" />
       <window_info id="Build Variants" order="3" sideWeight="0.5014663" side_tool="true" weight="0.1704698" />
@@ -2729,10 +2665,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" x="23" y="300" width="1490" height="224" id="Logcat" order="8" sideWeight="0.4986577" weight="0.8577713" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3240469" />
+      <window_info anchor="bottom" x="23" y="300" width="1490" height="224" id="Logcat" order="8" sideWeight="0.4986577" weight="0.85672516" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3230994" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013423" side_tool="true" weight="0.8577713" />
-      <window_info anchor="bottom" id="Build" order="11" sideWeight="0.49932885" weight="0.7316716" />
+      <window_info anchor="bottom" id="Build" order="11" sideWeight="0.49932885" weight="0.73099416" />
       <window_info anchor="bottom" id="Android Profiler" order="12" weight="0.32991204" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.3295302" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
@@ -2743,7 +2679,7 @@
       <window_info anchor="right" id="Gradle" order="6" weight="0.3295302" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Preview" order="9" weight="0.3295302" />
+      <window_info anchor="right" id="Preview" order="9" weight="0.32908848" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49853373" visible="true" weight="0.1704698" />
@@ -2824,36 +2760,36 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_home.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
           <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/app_bar_home.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_home_drawer.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_user_auth_login.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/SplashScreen.java">
@@ -2866,12 +2802,12 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_user_auth_signup.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/UserAuthActivity.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/google-services.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -2901,15 +2837,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user_auth.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_home.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
@@ -2918,13 +2853,14 @@
           </folding>
         </state>
       </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_settle.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -2941,12 +2877,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/round_button.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
         </state>
       </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/SettleUp.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2956,68 +2892,31 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_log_in.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/payeedataentrydialog.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
-        </state>
-      </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-28/android/widget/Adapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="39" column="54" lean-forward="true" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/newparticipant_list_layout.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/newpayee_list_layout.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_new_transaction.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
+        <state relative-caret-position="782">
           <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransactionActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1401">
-          <caret line="135" column="51" selection-start-line="135" selection-start-column="51" selection-end-line="135" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddPayeeAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
+        <state relative-caret-position="204">
           <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -3025,14 +2924,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/newparticipant_list_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/newpayee_list_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddParticipantAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
-          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#728#729#0" expanded="true" />
             <element signature="e#780#781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/payeedataentrydialog.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransactionActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="134" column="35" lean-forward="true" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
