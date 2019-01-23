@@ -4,6 +4,7 @@ package com.syb.splityourbill;
 //import android.support.constraint.ConstraintLayout;
 //import android.support.constraint.ConstraintSet;
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 //import android.view.Display;
@@ -17,13 +18,17 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 
 public class NewTransactionActivity extends AppCompatActivity {
 
     EditText remarks;
-    LinkedList<HashMap<String,String>> payeeListData;
+    LinkedList<String> payeeData;
+    LinkedList<Integer> payeeAmountData;
     LinkedList<String> participantListData;
     ListView payeeList,participantList;
     AddPayeeAdapter payeeadapter;
@@ -40,8 +45,9 @@ public class NewTransactionActivity extends AppCompatActivity {
         participantList =(ListView)findViewById(R.id.listviewparticipant);
 
         //setting payee adapter//
-        payeeListData = new LinkedList<HashMap<String,String>>();
-        payeeadapter = new AddPayeeAdapter(this,payeeListData);
+        payeeData = new LinkedList<String>();
+        payeeAmountData = new LinkedList<Integer>();
+        payeeadapter = new AddPayeeAdapter(this,payeeData,payeeAmountData);
         payeeList.setAdapter(payeeadapter);
 
         //setting participant adapter//
@@ -53,14 +59,14 @@ public class NewTransactionActivity extends AppCompatActivity {
         payeeList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                editPayee(view,position);
+                editPayee(position);
             }
         });
 
         participantList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                editParticipant(view,position);
+                editParticipant(position);
             }
         });
     }
@@ -92,11 +98,15 @@ public class NewTransactionActivity extends AppCompatActivity {
                 String email = dialogInputEmail.getText().toString();
                 String amount = dialogInputAmount.getText().toString();
                 if(!email.isEmpty() && !amount.isEmpty()){
-                    HashMap<String,String> map = new HashMap<String,String>();
-                    map.put(email,amount);
-                    payeeListData.add(map);
-                    payeeadapter.notifyDataSetChanged();
-                    dialog.dismiss();
+                    if(!payeeData.contains(email) && !participantListData.contains(email)){
+                        payeeData.add(email);
+                        payeeAmountData.add(Integer.parseInt(amount));
+                        payeeadapter.notifyDataSetChanged();
+                        dialog.dismiss();
+                    }
+                    else{
+                        Toast.makeText(NewTransactionActivity.this,"Already Exist",Toast.LENGTH_LONG).show();
+                    }
                 }
                 else
                     Toast.makeText(NewTransactionActivity.this,"Please Enter Correct Value",Toast.LENGTH_LONG).show();
@@ -133,9 +143,14 @@ public class NewTransactionActivity extends AppCompatActivity {
             public void onClick(View v){
                 String email = dialogInputEmail.getText().toString();
                 if(!email.isEmpty()){
-                    participantListData.add(email);
-                    participantadapter.notifyDataSetChanged();
-                    dialog.dismiss();
+                    if(!payeeData.contains(email) && !participantListData.contains(email)){
+                        participantListData.add(email);
+                        participantadapter.notifyDataSetChanged();
+                        dialog.dismiss();
+                    }
+                    else{
+                        Toast.makeText(NewTransactionActivity.this,"ALready Exist",Toast.LENGTH_LONG).show();
+                    }
                 }
                 else
                     Toast.makeText(NewTransactionActivity.this,"Please Enter Correct Value",Toast.LENGTH_LONG).show();
@@ -146,7 +161,7 @@ public class NewTransactionActivity extends AppCompatActivity {
 
     }
 
-    public void editPayee(View v,final int position){
+    public void editPayee(final int position){
 
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -183,7 +198,8 @@ public class NewTransactionActivity extends AppCompatActivity {
                 if(!email.isEmpty() && !amount.isEmpty()){
                     HashMap<String,String> map = new HashMap<String,String>();
                     map.put(email,amount);
-                    payeeListData.set(position,map);
+                    payeeData.set(position,email);
+                    payeeAmountData.set(position,Integer.parseInt(amount));
                     payeeadapter.notifyDataSetChanged();
                     dialog.dismiss();
 
@@ -195,7 +211,8 @@ public class NewTransactionActivity extends AppCompatActivity {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                payeeListData.remove(position);
+                payeeData.remove(position);
+                payeeAmountData.remove(position);
                 payeeadapter.notifyDataSetChanged();
                 dialog.dismiss();
             }
@@ -204,7 +221,7 @@ public class NewTransactionActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void editParticipant(View v,final int position){
+    public void editParticipant(final int position){
 
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -260,6 +277,24 @@ public class NewTransactionActivity extends AppCompatActivity {
     }
 
     public void split(View v){
+
+        try{
+            HashMap<String,Integer> data = new HashMap<String,Integer>();
+            for(int i=0;i<payeeData.size();i++){
+                data.put(payeeData.get(i),payeeAmountData.get(i));
+            }
+            for(String x :participantListData){
+             data.put(x,0);
+            }
+            //NewTransaction data = new NewTransaction(payeeData,payeeAmountData,participantListData);
+            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("transaction");
+            mDatabase.push().setValue(data);
+            Intent intent = new Intent(this,HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }catch(Exception e){
+            Toast.makeText(this,"Something Went Wrong\nCheck Internet Connection.",Toast.LENGTH_LONG);
+        }
 
     }
 

@@ -78,18 +78,18 @@ public class SignUpActivity extends AppCompatActivity {
 
                                 if(task.isComplete()){
                                     User user = new User(name,emailId,pass);
-                                    Uri uri = Uri.parse("android.resource://com.syb.splityourbill/drawable/defprofpic.png");
+                                    //Uri uri = Uri.parse("android.resource://com.syb.splityourbill/drawable/defprofpic.png");
 
                                     DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
                                     mDatabase.child("users").child(FirebaseAuth.getInstance().getUid()).setValue(user);
-                                    FirebaseUser fuser = FirebaseAuth.getInstance().getCurrentUser();
-                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                                            .setDisplayName(name)
-                                            .setPhotoUri(uri)
-                                            .build();
-
-                                    fuser.updateProfile(profileUpdates);
+//                                    FirebaseUser fuser = FirebaseAuth.getInstance().getCurrentUser();
+//                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+//                                            .setDisplayName(name)
+//                                            .setPhotoUri(uri)
+//                                            .build();
+//
+//                                    fuser.updateProfile(profileUpdates);
 
                                     Intent intent = new Intent(SignUpActivity.this, HomeActivity.class);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);

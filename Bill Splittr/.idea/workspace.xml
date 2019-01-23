@@ -20,12 +20,16 @@
     <list default="true" id="f0994c70-e242-4b96-8391-3694c51bd094" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddPayeeAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddPayeeAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransactionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransactionActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/payeedataentrydialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/payeedataentrydialog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/SignUpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/SignUpActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +63,9 @@
     <session id="998222308">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.34" value="2" />
@@ -68,31 +73,33 @@
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.59" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="4" />
+          <entry key="gradle" value="2" />
+          <entry key="java" value="15" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="4" />
+          <entry key="Groovy" value="2" />
+          <entry key="JAVA" value="15" />
           <entry key="XML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="9" />
-          <entry key="java" value="3358" />
+          <entry key="java" value="4506" />
           <entry key="xml" value="616" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3358" />
+          <entry key="JAVA" value="4506" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="XML" value="616" />
         </counts>
@@ -103,14 +110,15 @@
     <favorites_list name="Bill Splittr" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransactionActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="134" column="35" lean-forward="true" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
+            <state relative-caret-position="432">
+              <caret line="295" column="55" selection-start-line="295" selection-start-column="55" selection-end-line="295" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#10816#10832#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,8 +130,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="resourceFile" />
-        <option value="Class" />
         <option value="layoutResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -2419,7 +2427,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/SplashScreen.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_log_in.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/SignUpActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/LogInActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_settle.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/SettleUp.java" />
@@ -2430,15 +2437,17 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/addPayeeAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/newparticipant_list_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_new_transaction.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddPayeeAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/newpayee_list_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddParticipantAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/payeedataentrydialog.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/SignUpActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransaction.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddPayeeAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransactionActivity.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1940" />
@@ -2468,6 +2477,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2486,12 +2497,14 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="splityourbill" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Bill Splittr" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2499,7 +2512,7 @@
     <property name="device.picker.selection" value="2b05aae97ce4" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$USER_HOME$/AndroidStudioProjects/FirebasePractice" />
-    <property name="settings.editor.selected.configurable" value="preferences.updates" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.2.1" />
     <property name="sync.plugin.last.upgrade.timestamp" value="1547714228311" />
   </component>
@@ -2647,9 +2660,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1552" height="840" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49853373" visible="true" weight="0.15281501" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49853373" visible="true" weight="0.1769437" />
       <window_info id="Structure" order="1" sideWeight="0.5014663" side_tool="true" weight="0.1704698" />
       <window_info id="Favorites" order="2" sideWeight="0.5014663" side_tool="true" weight="0.1704698" />
       <window_info id="Build Variants" order="3" sideWeight="0.5014663" side_tool="true" weight="0.1704698" />
@@ -2658,7 +2670,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -2667,7 +2679,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" x="23" y="300" width="1490" height="224" id="Logcat" order="8" sideWeight="0.4986577" weight="0.85672516" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3230994" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013423" side_tool="true" weight="0.8577713" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5013423" side_tool="true" weight="0.85672516" />
       <window_info anchor="bottom" id="Build" order="11" sideWeight="0.49932885" weight="0.73099416" />
       <window_info anchor="bottom" id="Android Profiler" order="12" weight="0.32991204" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.3295302" />
@@ -2719,13 +2731,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/UserAuthFragment_login.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/Profile.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2821,20 +2826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/LogInActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/SignUpActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-43">
-          <caret line="60" column="51" selection-start-line="60" selection-start-column="51" selection-end-line="60" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_user_auth.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_home.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -2854,9 +2845,6 @@
         </state>
       </provider>
       <provider editor-type-id="android-manifest" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_settle.xml">
       <provider editor-type-id="text-editor" />
@@ -2914,16 +2902,6 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddPayeeAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/newparticipant_list_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -2960,12 +2938,61 @@
       </provider>
       <provider editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransactionActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/LogInActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="134" column="35" lean-forward="true" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
+        <state relative-caret-position="551">
+          <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/SignUpActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="80" column="38" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="31" column="60" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/AddPayeeAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="63" column="63" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/syb/splityourbill/NewTransactionActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="295" column="55" selection-start-line="295" selection-start-column="55" selection-end-line="295" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10816#10832#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -13,12 +13,14 @@ import java.util.LinkedList;
 class AddPayeeAdapter extends BaseAdapter {
 
     private Context mContext;
-    private LinkedList<HashMap<String,String>> payeeData;// = new LinkedList<HashMap<String, String>>();
+    private LinkedList<String> payeeData;
+    private LinkedList<Integer> payeeAmountData;
     private ViewHolder holder;
 
-    AddPayeeAdapter(Context context, LinkedList<HashMap<String,String>> list) {
+    AddPayeeAdapter(Context context, LinkedList<String> list,LinkedList<Integer> amount) {
         mContext = context;
         this.payeeData = list;
+        this.payeeAmountData = amount;
 
     }
 
@@ -38,7 +40,7 @@ class AddPayeeAdapter extends BaseAdapter {
     @Override
     public HashMap<String,Integer> getItem(int position) {
         HashMap<String,Integer> map = new HashMap<String,Integer>();
-        String x = payeeData.get(position).keySet().toArray()[0].toString();int y = Integer.parseInt(payeeData.get(position).get(x));
+        String x = payeeData.get(position);int y = payeeAmountData.get(position);
         map.put(x,y);
         return map;
     }
@@ -58,9 +60,8 @@ class AddPayeeAdapter extends BaseAdapter {
             holder = new ViewHolder();
             holder.payeeemail = vi.findViewById(R.id.payeeemail);
             holder.payeeamount = vi.findViewById(R.id.payeeamount);
-            String x = payeeData.get(position).keySet().toArray()[0].toString();
-            holder.payeeamount.setText(payeeData.get(position).get(x));
-            holder.payeeemail.setText(x);
+            holder.payeeamount.setText(payeeAmountData.get(position)+"");
+            holder.payeeemail.setText(payeeData.get(position));
             vi.setTag(holder);
 
         return vi;
